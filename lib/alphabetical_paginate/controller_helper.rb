@@ -80,7 +80,7 @@ module AlphabeticalPaginate
           slug = eval("x.#{params[:slug_field]}") if params[:slugged_link]
 
           field_val = block_given? ? yield(x).to_s : x.id.to_s
-          field_letter = field_val[0].mb_chars.downcase.to_s
+          field_letter = field_val[0].to_s.mb_chars.downcase.to_s
 
           case field_letter
             when params[:language].letters_regexp
